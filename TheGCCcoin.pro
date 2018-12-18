@@ -2,11 +2,11 @@ TEMPLATE = app
 TARGET = "TheGCCcoin-Qt"
 VERSION = 2.3.0.1
 
-INCLUDEPATH += /root/build/deps/local/include
-INCLUDEPATH += /root/build/deps/local
 INCLUDEPATH += src src/json src/qt src/tor
 INCLUDEPATH += src/tor/adapter src/tor/common src/tor/ext
 INCLUDEPATH += src/tor/ext/curve25519_donna src/tor/or
+INCLUDEPATH += /root/build/deps/local/include
+INCLUDEPATH += /root/build/deps/local
 LIBS += -L/root/build/deps/local/lib
 
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE BOOST_THREAD_PROVIDES_GENERIC_SHARED_MUTEX_ON_WIN __NO_SYSTEM_INCLUDES
@@ -590,7 +590,7 @@ macx:QMAKE_CXXFLAGS_THREAD += -pthread
 macx:QMAKE_INFO_PLIST = contrib/macdeploy/Info.plist
 
 # libs
-LIBS += -lssl -lcrypto -lcryptopp -ldb_cxx$$BDB_LIB_SUFFIX -lleveldb -lmemenv -levent -lz
+LIBS += -lssl -lcrypto -ldb_cxx$$BDB_LIB_SUFFIX -lleveldb -lmemenv -levent -lcryptopp -lz
 
 # boost libs
 LIBS += -lboost_system$$BOOST_LIB_SUFFIX -lboost_filesystem$$BOOST_LIB_SUFFIX -lboost_program_options$$BOOST_LIB_SUFFIX -lboost_thread$$BOOST_THREAD_LIB_SUFFIX -lboost_chrono$$BOOST_LIB_SUFFIX
